@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <title>HeaderPage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Keyframe animation for arrow */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px); /* Move the arrow down */
+            }
+            100% {
+                transform: translateY(0); /* Reset to original position */
+            }
+        }
+    
+        /* Apply animation to arrow */
+        .arrow {
+            animation: bounce 3s infinite; /* 1 second duration, infinite loop */
+           
+        }
+        #scroll-down-btn {
+        width: 70px; /* Set fixed button width */
+        height: 70px; /* Set fixed button height */
+    }
+    </style>
+</head>
+<body class="bg-white">
+
+    <header class="py-4 text-center border-b-2 border-blue-500">
+        <div class="container mx-auto flex justify-between items-center px-4 lg:px-40 ">
+            <!-- Logo -->
+            <div class="logo w-24 sm:w-28">
+                <img src="img/logo.png" alt="Company Logo" class="w-28 h-auto">
+            </div>
+    
+            <!-- Navigation Links -->
+            <nav class="flex-grow flex justify-center lg:flex ">
+                <ul class="flex space-x-6 font-oxygen font-normal text-sm pl-32">
+                    <li><a href="#home" class="text-black uppercase hover:text-blue-500">Home</a></li>
+                    <li><a href="#about" class="text-black uppercase hover:text-blue-500">About Us</a></li>
+                    <li><a href="#products" class="text-black uppercase hover:text-blue-500">Our Products</a></li>
+                    <li><a href="#gallery" class="text-black uppercase hover:text-blue-500">Gallery</a></li>
+                    <li><a href="#company" class="text-black uppercase hover:text-blue-500">Our Company</a></li>
+                    <li><a href="#vision" class="text-black uppercase hover:text-blue-500">Vision & Mission</a></li>
+                    <li><a href="#career" class="text-black uppercase hover:text-blue-500">Career</a></li>
+                    <li><a href="#contact" class="text-black uppercase hover:text-blue-500">Contact Us</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Hamburger Menu for Small Screens -->
+            <div class="lg:hidden flex items-center pr-5 sm:pr-5 md:pr-5  ">
+                <button class="text-white bg-blue-500  " id="hamburger-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+<!-- Mobile menu -->
+<div id="mobile-menu" class="md:hidden  flex justify-center items-center">
+    <ul class="space-y-4 px-6 py-4 bg-sky-500 text-center w-full" >
+        <li><a href="#home" class="text-white uppercase hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="text-white uppercase hover:text-blue-500">About Us</a></li>
+        <li><a href="#products" class="text-white uppercase hover:text-blue-500">Our Products</a></li>
+        <li><a href="#gallery" class="text-white uppercase hover:text-blue-500">Gallery</a></li>
+        <li><a href="#company" class="text-white uppercase hover:text-blue-500">Our Company</a></li>
+        <li><a href="#vision" class="text-white uppercase hover:text-blue-500">Vision & Mission</a></li>
+        <li><a href="#career" class="text-white uppercase hover:text-blue-500">Career</a></li>
+        <li><a href="#contact" class="text-white uppercase hover:text-blue-500">Contact Us</a></li>
+    </ul>
+</div>
+
+
+<div id="carousel" class="relative w-full h-full overflow-hidden">
+    <h2 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 text-white font-bold text-4xl z-10">
+        TRIPADA HEALTHCARE PVT. LTD.
+    </h2>
+    <h2 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white  text-2xl z-10">
+        Help To Rise Back To Glorious Health.
+    </h2>
+    
+
+    <!-- Carousel Images -->
+    <div class="carousel-inner flex transition-transform duration-700">
+        <div class="carousel-item w-full flex-shrink-0 relative">
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+            <img src="img/slide1.jpg" class="w-full h-full object-cover" alt="...">
+        </div>
+        <div class="carousel-item w-full flex-shrink-0 relative">
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+            <img src="img/slide2.jpg" class="w-full h-full object-cover" alt="...">
+        </div>
+        <div class="carousel-item w-full flex-shrink-0 relative">
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+            <img src="img/slide3.jpg" class="w-full h-full object-cover" alt="...">
+        </div>
+    </div>
+
+    <!-- Static Arrow Button Below h2 Tag -->
+    <button id="scroll-down-btn" class="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent border-2 border-neutral-400 p-4 rounded-full shadow-lg flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="text-gray-500 arrow w-16 h-16 "  stroke-width="0.5">
+            <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" fill="currentColor" />
+        </svg>
+    </button>
+    
+    
+    
+
+    <!-- Carousel Controls -->
+    <button id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-none text-neutral-400 p-4 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+    </button>
+    <button id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-none text-neutral-400 p-4 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </button>
+
+    <!-- Indicators (Small Boxes) -->
+    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <button class="indicator w-4 h-2 bg-white "></button>
+        <button class="indicator w-4 h-2 bg-white "></button>
+        <button class="indicator w-4 h-2 bg-white "></button>
+    </div>
+</div>
+<script>
+    let currentIndex = 0;
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function showSlide(index) {
+        if (index < 0) index = carouselItems.length - 1;
+        if (index >= carouselItems.length) index = 0;
+
+        // Update carousel position
+        const offset = -100 * index; // To move to the appropriate slide
+        document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+            if (i === index) {
+                indicator.classList.add('bg-blue-500');
+            } else {
+                indicator.classList.remove('bg-blue-500');
+            }
+        });
+
+        currentIndex = index;
+    }
+
+    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+    // Initialize first slide
+    showSlide(currentIndex);
+
+    // Auto-slide every 3 seconds
+    setInterval(() => {
+        showSlide(currentIndex + 1); // Go to the next slide
+    }, 3000); // 3000 milliseconds (3 seconds)
+
+    // Scroll to the next section when clicking the down arrow
+    const scrollDownBtn = document.getElementById('scroll-down-btn');
+    scrollDownBtn.addEventListener('click', () => {
+        window.scrollBy({
+            top: window.innerHeight, // Scroll down by one full screen height
+            left: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+</body>
+</html>
