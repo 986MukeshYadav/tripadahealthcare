@@ -4,7 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Loop through elements with the "data-file-include" attribute and load HTML files
+            for (const element of document.querySelectorAll("[data-file-include]")) {
+                const file = element.getAttribute("data-file-include");
+    
+                fetch(`${file}.html`)
+                    .then(response => response.text())
+                    .then((data) => {
+                        // Inject the HTML into the element
+                        element.innerHTML = data;
+                        console.log(data);
+                        // Find any script tags in the injected content and run them
+                        const scripts = element.querySelectorAll("script");
+                        scripts.forEach(script => {
+                            const newScript = document.createElement("script");
+                            newScript.textContent = script.textContent;  // or newScript.src = script.src;
+                            document.body.appendChild(newScript);  // Append the script to the document body
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Error loading file:", error);
+                    });
+            }
+        });
+    </script>
+    
+
+
+    
 </head>
-<body>
+<body class=" bg-white">
+    <div data-file-include="header" id="header"></div>
+    <div data-file-include="about" id="about"></div>
+    <div data-file-include="gallery" id="gallery"></div>
+    <div data-file-include="ourcompany" id="ourcompany"></div>
+    <div data-file-include="vision" id="vision"></div>
+    <div data-file-include="contact" id="contact"></div>
+    <div data-file-include="footer" id="footer"></div>
+    
+    <div class="body">
+        
+
+    </div>
+    
 </body>
 </html>

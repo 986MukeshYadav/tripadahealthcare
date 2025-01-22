@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>HeaderPage</title>
+</head>
+<body class="bg-white">
+    <nav class="p-5 bg-white shadow lg:flex lg:items-center lg:justify-between">
+        <div class="cursor-pointer flex justify-between items-center">
+            <img src="img/logo.png" alt="logo" />
+            <span class="text-4xl cursor-pointer mx-2 lg:hidden block bg-blue-500 text-white">
+                <ion-icon name="menu" onclick="toggleMenu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <ul id="menu" class="lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 ">
+            <li class="mx-4 my-8 lg:my-0"><a href="#home" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Home</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#about" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">About Us</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#products" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Our Products</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#gallery" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Gallery</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#company" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Our Company</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#vision" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Vision & Mission</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#career" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Career</a></li>
+            <li class="mx-4 my-6 lg:my-0"><a href="#contact" class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm">Contact Us</a></li>
+        </ul>
+    </nav>
+ 
+    <script>
+        function toggleMenu(icon) {
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('top-[80px]')) {
+                // Hide menu
+                menu.classList.remove('top-[80px]', 'opacity-100', 'bg-sky-500');
+                menu.classList.add('top-[-400px]', 'opacity-0');
+                icon.name = 'menu';
+            } else {
+                // Show menu and change background
+                menu.classList.remove('top-[-400px]', 'opacity-0');
+                menu.classList.add('top-[80px]', 'opacity-100', 'bg-sky-500'); // Change background color
+                icon.name = '';
+            }
+        }
+    </script>
+</body>
+</html>

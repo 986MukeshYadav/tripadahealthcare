@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white p-8">
+
+    <div class="mx-auto p-8">
+        <h2 class="text-4xl font-roboto text-neutral-700 text-center mb-6 underline">CONTACT US</h2>
+        <form action="#" method="POST">
+            <div class="mb-4 px-8"> <!-- Added px-6 for horizontal padding -->
+                <input type="text" id="name" name="name" required class="w-full p-3 border-b-2 border-gray-300 focus:rounded focus:ring-2 focus:ring-black" placeholder="Name:">
+            </div>
+            
+            <div class="mb-4 px-8"> <!-- Added px-6 for horizontal padding -->
+                <input type="email" id="email" name="email" required class="w-full p-3 border-b-2 border-gray-300 focus:rounded focus:ring-2 focus:ring-black" placeholder="Email:">
+            </div>
+            
+            <div class="mb-4 px-8"> <!-- Added px-6 for horizontal padding -->
+                <textarea id="message" name="message" rows="4" required class="w-full p-3 border-b-2 border-gray-300 focus:rounded focus:ring-2 focus:ring-black" placeholder="Message:"></textarea>
+            </div>
+            
+            <button type="submit" class="w-36 py-3 bg-sky-500 text-white font-roboto block mx-auto mb-10">SEND</button>
+        </form>
+    </div>
+
+</body>
+</html>
