@@ -1,5 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tripada Healthcare Pvt.Ltd.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <style>
+      /* Fix the header */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10; /* Keeps it above the banner */
+      }
+
+      /* Add padding to the body to prevent overlap with fixed header */
+      body {
+        padding-top: 80px; /* Adjust based on header height */
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <nav
+      class="p-5 bg-white shadow lg:flex lg:items-center lg:justify-between border-b-2 border-blue-500"
+    >
+      <div class="cursor-pointer flex justify-between items-center z-30">
+        <img src="img/logo.png" alt="logo" />
+        <span
+          class="text-4xl cursor-pointer mx-2 lg:hidden block bg-blue-500 text-white"
+        >
+          <ion-icon name="menu" onclick="toggleMenu(this)"></ion-icon>
+        </span>
+      </div>
+
+      <ul
+        id="menu"
+        class="lg:flex lg:items-center z-20 lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 font-oxygen text-sm"
+      >
+        <li class="mx-4 my-8 lg:my-0">
+          <a
+            href="index.html"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Home</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="index.html#about"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >About Us</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="product.html"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Our Products</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="index.html#gallery"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Gallery</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="index.html#ourcompany"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Our Company</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="index.html#vision"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Vision & Mission</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="career.html"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Career</a
+          >
+        </li>
+        <li class="mx-4 my-6 lg:my-0">
+          <a
+            href="index.html#contact"
+            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      function toggleMenu(icon) {
+        const menu = document.getElementById("menu");
+        if (menu.classList.contains("top-[80px]")) {
+          menu.classList.remove("top-[80px]", "opacity-100", "bg-sky-500");
+          menu.classList.add("top-[-400px]", "opacity-0");
+          icon.name = "menu";
+        } else {
+          menu.classList.remove("top-[-400px]", "opacity-0");
+          menu.classList.add("top-[80px]", "opacity-100", "bg-sky-500");
+          icon.name = "";
+        }
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+
+          const menu = document.getElementById("menu");
+          menu.classList.remove("top-[80px]", "opacity-100", "bg-sky-500");
+          menu.classList.add("top-[-400px]", "opacity-0");
+          const icon = document.querySelector(".text-4xl");
+          icon.name = "menu";
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,4 +191,4 @@
         }
     </script>
 </body>
-</html>
+</html> -->
