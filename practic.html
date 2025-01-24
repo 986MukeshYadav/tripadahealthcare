@@ -1,49 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <title>HeaderPage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel with Blink Effect</title>
+  <style>
+    /* Blink Effect using opacity */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    /* Carousel Items */
+    .carousel-item {
+      display: none; /* Initially hide all images */
+      opacity: 1; /* Ensure images are fully visible when shown */
+      transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+    }
+
+    /* Blink Effect Class */
+    .blink {
+      animation: blink 0.5s ease-in-out;
+    }
+
+    /* Styling for Indicators */
+    .indicator {
+      width: 16px;
+      height: 8px;
+      background-color: white;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .bg-blue-500 {
+      background-color: blue;
+    }
+  </style>
 </head>
-<body class="bg-white">
-    <nav class="p-5 bg-white shadow lg:flex lg:items-center md:justify-between">
-        <div class="cursor-pointer flex justify-between items-center">
-            <img src="img/logo.png" alt="logo" />
-            <span class="text-4xl cursor-pointer mx-2 lg:hidden block bg-blue-500 text-white">
-                <ion-icon name="menu" onclick="toggleMenu(this)"></ion-icon>
-            </span>
-        </div>
+<body>
+  <div id="carousel" class="relative w-full h-full overflow-hidden">
+    <h2 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 text-white font-bold text-4xl lg:text-[40px] text-[30px] lg:tracking-tight z-10">
+      TRIPADA HEALTHCARE PVT. LTD.
+    </h2>
+    <h2 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-1/4 text-white text-2xl lg:text-[24px] text-[20px] lg:tracking-tight z-10">
+      Help To Rise Back To Glorious Health.
+    </h2>
 
-        <ul id="menu" class="lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 ">
-            <li class="mx-4 my-8 md:my-0"><a href="#home" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Home</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#about" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">About Us</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#products" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Our Products</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#gallery" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Gallery</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#company" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Our Company</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#vision" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Vision & Mission</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#career" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Career</a></li>
-            <li class="mx-4 my-6 md:my-0"><a href="#contact" class="text-black max-md:text-gray-300 uppercase hover:text-blue-500">Contact Us</a></li>
-        </ul>
-    </nav>
+    <!-- Carousel Images -->
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+        <img src="img/slide1.jpg" class="w-full h-full object-cover" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+        <img src="img/slide2.jpg" class="w-full h-full object-cover" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+        <img src="img/slide3.jpg" class="w-full h-full object-cover" alt="Slide 3">
+      </div>
+    </div>
 
-    <script>
-        function toggleMenu(icon) {
-            const menu = document.getElementById('menu');
-            if (menu.classList.contains('top-[80px]')) {
-                // Hide menu
-                menu.classList.remove('top-[80px]', 'opacity-100', 'bg-sky-500');
-                menu.classList.add('top-[-400px]', 'opacity-0');
-                icon.name = 'menu';
-            } else {
-                // Show menu and change background
-                menu.classList.remove('top-[-400px]', 'opacity-0');
-                menu.classList.add('top-[80px]', 'opacity-100', 'bg-sky-500'); // Change background color
-                icon.name = '';
-            }
+    <!-- Indicators -->
+    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <button class="indicator"></button>
+      <button class="indicator"></button>
+      <button class="indicator"></button>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    const indicators = document.querySelectorAll(".indicator");
+
+    function showSlide(index) {
+      if (index < 0) index = carouselItems.length - 1; // Wrap to last slide
+      if (index >= carouselItems.length) index = 0; // Wrap to first slide
+
+      // Hide all images
+      carouselItems.forEach(item => {
+        item.style.display = "none"; // Hide each slide
+        item.style.opacity = "0"; // Ensure opacity starts from 0
+        item.classList.remove("blink"); // Remove any previous blink class
+      });
+
+      // Show the current image
+      const activeImage = carouselItems[index];
+      activeImage.style.display = "block"; // Show the slide
+      activeImage.style.opacity = "1"; // Set opacity to 1 for visibility
+      activeImage.classList.add("blink"); // Add the blink effect
+
+      // Update indicators
+      indicators.forEach((indicator, i) => {
+        if (i === index) {
+          indicator.classList.add("bg-blue-500");
+        } else {
+          indicator.classList.remove("bg-blue-500");
         }
-    </script>
+      });
+
+      currentIndex = index; // Update the current index
+    }
+
+    // Auto-switch images every 3 seconds
+    setInterval(() => {
+      showSlide(currentIndex + 1); // Go to the next slide
+    }, 3000); // 3000 milliseconds (3 seconds)
+
+    // Initialize the first slide
+    showSlide(currentIndex);
+  </script>
 </body>
 </html>

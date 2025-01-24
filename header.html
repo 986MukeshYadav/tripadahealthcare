@@ -19,6 +19,23 @@
     ></script>
 
     <style>
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    /* Carousel Items */
+    .carousel-item {
+      display: none; /* Initially hide all images */
+      opacity: 1; /* Ensure images are fully visible when shown */
+      transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+    }
+    /* Blink Effect Class */
+    .blink {
+      animation: blink 0.5s ease-in-out;
+    }
       /* Keyframe animation for arrow */
       @keyframes bounce {
         0% {
@@ -31,6 +48,7 @@
           transform: translateY(0); /* Reset to original position */
         }
       }
+      
 
       /* Apply animation to arrow */
       .arrow {
@@ -75,7 +93,20 @@
         #scroll-down-btn {
           display: none;
         }
-      }
+       
+  /* Adjust carousel and h2 alignment on smaller screens */
+  @media (max-width:500px) {
+    #carousel {
+      height: 200px; /* Reduce carousel height on smaller screens */
+    }
+
+    .carousel-item img {
+      object-fit: cover; /* Ensure images are cropped to fit */
+      height: 300px; /* Match the carousel height */
+    }
+  }
+}
+      
     </style>
   </head>
   <body class="bg-white">
@@ -93,7 +124,7 @@
 
       <ul
         id="menu"
-        class="lg:flex lg:items-center lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 font-oxygen text-sm"
+        class="sm:text-center max-sm:text-center lg:flex lg:items-center lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 font-oxygen text-sm"
       >
         <li class="mx-4 my-8 lg:my-0">
           <a
@@ -157,13 +188,13 @@
     <script>
       function toggleMenu(icon) {
         const menu = document.getElementById("menu");
-        if (menu.classList.contains("top-[80px]")) {
-          menu.classList.remove("top-[80px]", "opacity-100", "bg-sky-500");
+        if (menu.classList.contains("top-[120px]")) {
+          menu.classList.remove("top-[120px]", "opacity-100", "bg-sky-500");
           menu.classList.add("top-[-400px]", "opacity-0");
           icon.name = "menu";
         } else {
           menu.classList.remove("top-[-400px]", "opacity-0");
-          menu.classList.add("top-[80px]", "opacity-100", "bg-sky-500");
+          menu.classList.add("top-[120px]", "opacity-100", "bg-sky-500");
           icon.name = "";
         }
       }
@@ -185,14 +216,18 @@
       });
     </script>
 
+
+    <!-- Carousel -->
+
+
     <div id="carousel" class="relative w-full h-full overflow-hidden ">
       <h2
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 text-white font-bold text-4xl lg:text-[40px] text-[30px] lg:tracking-tight whitespace-nowrap z-10"
+        class="absolute max-sm:w-full max-sm:text-center max-md:w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 text-white font-bold max-[350px]:font-semibold text-4xl lg:text-[40px] text-[30px] lg:tracking-tight  z-10"
       >
         TRIPADA HEALTHCARE PVT. LTD.
       </h2>
       <h2
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-1/4 text-white text-2xl lg:text-[24px] text-[20px] lg:tracking-tight whitespace-nowrap z-10"
+        class="absolute max-sm:w-full max-sm:text-center max-md:w-full max-sm:mt-4  text-center top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-1/4 text-white text-2xl lg:text-[24px] text-[20px] lg:tracking-tight  z-10"
       >
         Help To Rise Back To Glorious Health.
       </h2>
@@ -304,17 +339,24 @@
       const indicators = document.querySelectorAll(".indicator");
       const prevBtn = document.getElementById("prev-btn");
       const nextBtn = document.getElementById("next-btn");
-
+    
       function showSlide(index) {
         if (index < 0) index = carouselItems.length - 1;
         if (index >= carouselItems.length) index = 0;
-
-        // Update carousel position
-        const offset = -100 * index; // To move to the appropriate slide
-        document.querySelector(
-          ".carousel-inner"
-        ).style.transform = `translateX(${offset}%)`;
-
+    
+        // Hide all images first
+        carouselItems.forEach(item => {
+          item.style.display = "none"; // Hide each slide
+        item.style.opacity = "0"; // Ensure opacity starts from 0
+        item.classList.remove("blink"); // Remove any previous blink class
+        });
+    
+        // Show the current image
+        const activeImage = carouselItems[index];
+        activeImage.style.display = "block";
+        activeImage.style.opacity = "1"; // Set opacity to 1 for visibility
+        activeImage.classList.add("blink"); // Add the blink effect
+    
         // Update indicators
         indicators.forEach((indicator, i) => {
           if (i === index) {
@@ -323,21 +365,21 @@
             indicator.classList.remove("bg-blue-500");
           }
         });
-
+    
         currentIndex = index;
       }
-
+    
       prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
       nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
-
+    
       // Initialize first slide
       showSlide(currentIndex);
-
+    
       // Auto-slide every 3 seconds
       setInterval(() => {
         showSlide(currentIndex + 1); // Go to the next slide
-      }, 3000); // 3000 milliseconds (3 seconds)
-
+      }, 10000); // 3000 milliseconds (3 seconds)
+    
       // Scroll to the next section when clicking the down arrow
       const scrollDownBtn = document.getElementById("scroll-down-btn");
       scrollDownBtn.addEventListener("click", () => {
@@ -348,5 +390,6 @@
         });
       });
     </script>
+    
   </body>
 </html>

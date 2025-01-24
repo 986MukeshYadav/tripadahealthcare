@@ -48,7 +48,7 @@
               // Find any script tags in the injected content and run them
               const scripts = element.querySelectorAll("script");
               scripts.forEach((script) => {
-                const newScript = document.createElement("script");
+                const newScript = document.createElement("script"); //inline script 
                 newScript.textContent = script.textContent; // or newScript.src = script.src;
                 document.body.appendChild(newScript); // Append the script to the document body
               });
@@ -68,7 +68,6 @@
     <div data-file-include="vision" id="vision"></div>
     <div data-file-include="contact" id="contact"></div>
     <div data-file-include="footer" id="footer"></div>
-
     <div class="body"></div>
   </body>
 </html>
