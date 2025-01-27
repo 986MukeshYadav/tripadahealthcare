@@ -12,6 +12,7 @@ module.exports = {
       },
       fontSize: {
         'sm': '14px', // You can modify font-size here too if needed
+       
       },
     },
   },

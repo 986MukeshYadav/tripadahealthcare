@@ -22,7 +22,7 @@
           <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
             <div class="lg:col-span-3 col-span-12">
               <p class="text-lg underline font-oxygen">About</p>
-              <p class="mt-6 font-oxygen text-base">
+              <p class="mt-6 font-oxygen  text-[15px]">
                 Tripada Healthcare a well-known pharmaceutical Company
                 introduced by group of committed, dedicated and experienced
                 professional with a better healthcare and consistently adhering
@@ -41,7 +41,7 @@
                   <a
                     class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
                   >
-                    <i class="fas fa-phone-alt mr-2 text-base"></i
+                    <i class="fas fa-phone-alt mr-2 text-[15px]"></i
                     >Tel:11-26851123
                   </a>
                 </li>
@@ -49,7 +49,7 @@
                   <a
                     class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
                   >
-                    <i class="fas fa-phone-alt mr-2 text-base"></i> Tel:
+                    <i class="fas fa-phone-alt mr-2 text-[15px]"></i> Tel:
                     079-26857211
                   </a>
                 </li>
@@ -57,7 +57,7 @@
                   <a
                     class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
                   >
-                    <i class="fas fa-mobile-alt mr-2 text-base"></i> Phone:
+                    <i class="fas fa-mobile-alt mr-2 text-[15px]"></i> Phone:
                     8238522211
                   </a>
                 </li>
@@ -65,7 +65,7 @@
                   <a
                     class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
                   >
-                    <i class="fas fa-envelope mr-2 text-base"></i>
+                    <i class="fas fa-envelope mr-2 text-[15px]"></i>
                     tripadahealthcare@gmail.com
                   </a>
                 </li>
@@ -73,14 +73,14 @@
                   <a
                     class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
                   >
-                    <i class="fas fa-envelope mr-2 text-base"></i>
+                    <i class="fas fa-envelope mr-2 text-[15px]"></i>
                     tripadahealthcare1998@yahoo.com
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div class="lg:col-span-3 md:col-span-4 col-span-12">
+            <div class="lg:col-span-3 md:col-span-4 col-span-12 ">
               <!-- Follow Us Section -->
               <p class="tracking-wide text-gray-200 text-lg underline">
                 Follow Us
@@ -116,10 +116,10 @@
               <p class="tracking-wide text-gray-200 text-lg mt-4 underline">
                 Hours
               </p>
-              <div class="flex items-center mt-4">
+              <div class="flex items-center mt-2 left-2">
                 <i class="fas fa-clock text-gray-200 mr-2"></i>
-                <span class="text-gray-200 text-base"
-                  >Mon - Sat: 10:00 AM - 7:00 PM</span
+                <span class="text-gray-200 text-[15px] "
+                  >Mon - Sat: 10 AM - 7 PM</span
                 >
               </div>
             </div>
@@ -132,12 +132,12 @@
                 <!-- Location Icon -->
                 <i class="fas fa-map-marker-alt text-gray-200 mr-3 mt-2"></i>
                 <!-- Address Text -->
-                <p class="text-base">
+                <p class="text-[15px]">
                   Tripada Healthcare Pvt. Ltd.,
-                  <br class="text-base" />
-                  3 Yogi Complex, Nr Doordarshan <br class="text-base" />
-                  Kendra, Thaltej, <br class="text-base" />
-                  Ahmedabad, <br class="text-base" />
+                  <br class="text-[15px]" />
+                  3 Yogi Complex, Nr Doordarshan <br class="text-[15px]" />
+                  Kendra, Thaltej, <br class="text-[15px]" />
+                  Ahmedabad, <br class="text-[15px]" />
                   India 380054.
                 </p>
               </div>
@@ -150,6 +150,30 @@
             <p class="mb-0">© Tripada Pvt. Ltd.</p>
           </div>
         </div>
+        <!-- Go to Top Button -->
+    <div
+    id="go-top"
+    class="fixed bottom-10 right-8 w-12 h-12 bg-sky-500 text-white  transition-all duration-300 cursor-pointer hidden"
+  >
+    <a href="index.html" class="flex items-center justify-center w-full h-full">
+      <i class="fas fa-angle-up text-sm"></i>
+    </a>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+  <script>
+    const goTopButton = document.getElementById("go-top");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        goTopButton.classList.remove("hidden");
+        goTopButton.classList.add("flex");
+      } else {
+        goTopButton.classList.add("hidden");
+        goTopButton.classList.remove("flex");
+      }
+    });
+  </script>
       </footer>
     </main>
   </body>

@@ -8,93 +8,143 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tripada Healthcare Pvt.Ltd.</title>
+    <style>
+      .parallax {
+        position: relative;
+        background-image: url("img/img33.jpg"); /* Replace with your desired background image */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 0px; /* Adjust padding for top spacing */
+        padding-bottom: 400px; /* Adjust padding for bottom spacing */
+        width: 100%; /* Ensure the section spans full width */
+      }
+
+      /* Scope styles to `.values-list` */
+      .values-list ul {
+        list-style-type: none; /* Remove default bullet points */
+        padding-left: 0; /* Remove default left padding */
+        text-align: center; /* Center the list */
+      }
+
+      .values-list li {
+        position: relative; /* Allow positioning of pseudo-element */
+        margin: 10px 0; /* Add spacing between list items */
+        text-align: center; /* Center-align the text */
+        font-variant-numeric: tabular-nums; /* Tabular numerals */
+        unicode-bidi: isolate; /* Proper bidirectional text rendering */
+        left: 30px;
+      }
+
+      .values-list li::before {
+        content: "■"; /* Custom bullet point (a square) */
+        margin-top: 10px;
+        position: absolute; /* Position the bullet */
+        left: -20px; /* Position the bullet to the left of the text */
+        color: rgb(82, 78, 77); /* Set bullet color */
+        font-size: 8px; /* Adjust bullet size */
+        line-height: 1; /* Align bullet with text */
+      }
+
+      .values-list ul {
+        display: inline-block; /* Center the list horizontally */
+        text-align: left; /* Align bullets and text */
+      }
+      @media only screen and (max-width: 600px) {
+        .values-list li {
+          left: -1px;
+          
+        }
+}
+    </style>
+    <title>Tripada Healthcare Pvt. Ltd.</title>
   </head>
   <body class="font-roboto">
     <!-- Main Container -->
-    <div class="mid-content bg-stone-50 mt-16">
-      <!-- "Vision & Mission" Title -->
-      <span
-      class="text-2xl sm:text-4xl font-oxygen text-center block mt-8 underline text-zinc-600 px-8 md:px-12 lg:px-16 whitespace-nowrap"
-    >
-      VISION & MISSION
-    </span>
-      <!-- Vision Section -->
-      <div
-        class="flex items-center justify-center font-roboto text-zinc-500 text-center mt-8 px-8 md:px-12 lg:px-16"
-      >
-        <div class="page-style p-8 bg-opacity-50 backdrop-blur-sm rounded-lg">
-          <!-- Vision -->
-          <div class="mb-8">
-            <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
-              Vision
-            </h2>
-            <p class="text-base text-zinc-500">
-              "Our vision is to be a leading pharmaceutical company in India and
-              to become a significant global player by providing high quality,
-              affordable, and innovative solutions in medicine for psychiatric
-              treatment."
-            </p>
-          </div>
+    <section class="parallax py-12 px-0">
+      <div class="mid-content bg-stone-50 mt-16">
+        <!-- "Vision & Mission" Title -->
+        <span
+          class="text-2xl sm:text-4xl font-oxygen text-center block mt-8 underline text-zinc-600 px-8 md:px-12 lg:px-16 whitespace-nowrap"
+        >
+          VISION & MISSION
+        </span>
+        <!-- Vision Section -->
+        <div
+          class="flex items-center justify-center font-roboto text-zinc-500 text-center mt-8 px-8 md:px-12 lg:px-16"
+        >
+          <div class="page-style p-8 bg-opacity-50 backdrop-blur-sm rounded-lg">
+            <!-- Vision -->
+            <div class="mb-8">
+              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
+                Vision
+              </h2>
+              <p class="text-base text-zinc-500">
+                "Our vision is to be a leading pharmaceutical company in India and
+                to become a significant global player by providing high quality,
+                affordable, and innovative solutions in medicine for psychiatric
+                treatment."
+              </p>
+            </div>
 
-          <!-- Mission -->
-          <div class="mb-8">
-            <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
-              Mission
-            </h2>
-            <p class="text-base text-zinc-500">
-              "We will discover, develop, and successfully market pharmaceutical
-              products for psychiatric care and shall provide total customer
-              satisfaction and achieve leadership in chosen markets, products,
-              and services across the globe, through excellence in technology,
-              based on world-class research and development."
-            </p>
-          </div>
+            <!-- Mission -->
+            <div class="mb-8">
+              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
+                Mission
+              </h2>
+              <p class="text-base text-zinc-500">
+                "We will discover, develop, and successfully market pharmaceutical
+                products for psychiatric care and shall provide total customer
+                satisfaction and achieve leadership in chosen markets, products,
+                and services across the globe, through excellence in technology,
+                based on world-class research and development."
+              </p>
+            </div>
 
-          <!-- Values -->
-          <div>
-            <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
-              Values
-            </h2>
-            <p class="text-base text-zinc-500 mb-8">
-              A set of core values continue to guide us through the process of
-              transforming the conglomerate into a high-performing and caring
-              organization for our customers, employees, and society.
-            </p>
-            <ul
-              class="list-[square] list-inside space-y-1 text-base text-zinc-500"
-            >
-              <li>
-                Improving quality of life of our customers, as we believe
-                quality is a way of life.
-              </li>
-              <li>
-                Creating value for our shareholders, for the trust bestowed on
-                us.
-              </li>
-              <li>
-                Building an empowered and ethical Tripada family, as the
-                foundation for a bright future.
-              </li>
-              <li>
-                Responsibility towards the society and environment, as we owe
-                our existence to them.
-              </li>
-              <li>
-                Being innovative in solutions, for being different, counts.
-              </li>
-              <li>
-                Striving for excellence in whatever we do, to follow the
-                exclusive path to leadership.
-              </li>
-              <li>
-                Flexibility and speed shall be our oars for navigating the
-                turbulent seas.
-              </li>
-            </ul>
+            <!-- Values -->
+            <div class="values-list">
+              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
+                Values
+              </h2>
+              <p class="text-base text-zinc-500 mb-8">
+                A set of core values continue to guide us through the process of
+                transforming the conglomerate into a high-performing and caring
+                organization for our customers, employees, and society.
+              </p>
+              <ul class="list-inside space-y-1 text-base text-zinc-500 ">
+                <li>
+                  Improving quality of life of our customers, as we believe
+                  quality is a way of life.
+                </li>
+                <li>
+                  Creating value for our shareholders, for the trust bestowed on
+                  us.
+                </li>
+                <li>
+                  Building an empowered and ethical Tripada family, as the
+                  foundation for a bright future.
+                </li>
+                <li>
+                  Responsibility towards the society and environment, as we owe
+                  our existence to them.
+                </li>
+                <li>
+                  Being innovative in solutions, for being different, counts.
+                </li>
+                <li>
+                  Striving for excellence in whatever we do, to follow the
+                  exclusive path to leadership.
+                </li>
+                <li>
+                  Flexibility and speed shall be our oars for navigating the
+                  turbulent seas.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>
