@@ -10,10 +10,6 @@ module.exports = {
         oxygen: ['Oxygen', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif']
       },
-      fontSize: {
-        'sm': '14px', // You can modify font-size here too if needed
-       
-      },
     },
   },
   plugins: [],

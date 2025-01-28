@@ -36,7 +36,7 @@
   </head>
   <body class="bg-white">
     <nav
-      class="p-5 bg-white shadow lg:flex lg:items-center lg:justify-between border-b-2 border-blue-500"
+      class="p-5 bg-white shadow lg:flex lg:items-center lg:justify-between xl:px-28 border-b-2 border-blue-500"
     >
       <div class="cursor-pointer flex justify-between items-center z-30">
         <img src="img/logo.png" alt="logo" />
@@ -113,13 +113,13 @@
     <script>
       function toggleMenu(icon) {
         const menu = document.getElementById("menu");
-        if (menu.classList.contains("top-[80px]")) {
-          menu.classList.remove("top-[80px]", "opacity-100", "bg-sky-500");
+        if (menu.classList.contains("top-[120px]")) {
+          menu.classList.remove("top-[120px]", "opacity-100", "bg-sky-500");
           menu.classList.add("top-[-400px]", "opacity-0");
           icon.name = "menu";
         } else {
           menu.classList.remove("top-[-400px]", "opacity-0");
-          menu.classList.add("top-[80px]", "opacity-100", "bg-sky-500");
+          menu.classList.add("top-[120px]", "opacity-100", "bg-sky-500");
           icon.name = "";
         }
       }

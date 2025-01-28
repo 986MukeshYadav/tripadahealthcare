@@ -1,0 +1,15 @@
+.custom-underline {
+    position: relative; /* Ensure the span is positioned relative */
+  }
+
+  .custom-underline::after {
+    content: "";
+    position: absolute;
+    width: 50%; /* Set the width of the underline */
+    top: 95%; /* Position it below the text */
+    left: 50%; /* Align it horizontally */
+    margin-left: -25%; /* Adjust to ensure it's centered */
+    margin-top: 0px; /* Add space between the text and the line */
+    border-bottom: 2px solid; /* The thickness of the underline */
+    border-color:rgb(64 64 64); /* Inherit the text color */
+  }

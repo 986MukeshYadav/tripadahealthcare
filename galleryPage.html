@@ -7,22 +7,31 @@
       href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="icon"
+    type="image/png"
+    href="img/favicon-96x96.png"
+    sizes="96x96"
+  />
+  <link rel="icon" type="image/svg+xml" href="img//favicon.svg" />
+  <link rel="shortcut icon" href="img//favicon.ico" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="img//apple-touch-icon.png"
+  />
+  <link rel="manifest" href="img//site.webmanifest" />
     <title>Gallery | Tripada Healthcare Pvt.Ltd.</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Custom Parallax Effect for the entire section */
-      .parallax1 {
-        position: relative;
-        background-image: url("img/img11.jpg"); /* Replace with your desired background image */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding-top: 400px; /* Adjust padding for top spacing */
-        padding-bottom: 400px; /* Adjust padding for bottom spacing */
-        width: 100%; /* Ensure the section spans full width */
-      }
-
       .gallery-content {
         position: relative;
         z-index: 1; /* Ensure content appears above the background */
@@ -123,19 +132,19 @@
     </style>
   </head>
   <body class="bg-gray-100 font-oxygen">
+    <div data-file-include="home" id="home"></div>
     <!-- Gallery Section with Parallax Background -->
-    <section class="parallax1 py-12 px-0">
+    <section class="parallax1 py-0 px-0">
       <div
         class="gallery-content bg-white w-full py-12 px-4 sm:px-6 md:px-12 lg:px-32 xl:px-32"
       >
-      <div class="flex justify-center mt-4 mb-16">
-        <span class="text-4xl font-oxygen text-zinc-600 relative pb-3 custom-underline">
+        <h2
+          class="text-4xl text-center text-neutral-700 font-normal mt-4 mb-16 underline"
+        >
           GALLERY
-        </span>
-      </div>
-      
+        </h2>
         <div
-          class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 cursor-pointer px-8 gallery-container"
+          class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 cursor-pointer px-8 gallery-container mb-6"
         >
           <!-- Gallery Item 1 -->
           <div class="gallery-item relative">
@@ -203,12 +212,6 @@
             />
           </div>
         </div>
-       <a href="galleryPage.html"> <button
-        type="submit"
-        class="w-36 py-3 bg-sky-500 text-white font-roboto block mx-auto my-4 mb-10"
-      >
-        Show More
-      </button></a>
       </div>
     </section>
 
@@ -261,6 +264,36 @@ function changeImage(direction) {
   const modalImage = document.getElementById("modal-image");
   modalImage.src = images[currentImageIndex]; // Update the image
 }
+
+   // Import to html file
+
+   document.addEventListener("DOMContentLoaded", () => {
+        // Loop through elements with the "data-file-include" attribute and load HTML files
+        for (const element of document.querySelectorAll(
+          "[data-file-include]"
+        )) {
+          const file = element.getAttribute("data-file-include");
+
+          fetch(`${file}.html`)
+            .then((response) => response.text())
+            .then((data) => {
+              // Inject the HTML into the element
+              element.innerHTML = data;
+              console.log(data);
+              // Find any script tags in the injected content and run them
+              const scripts = element.querySelectorAll("script");
+              scripts.forEach((script) => {
+                const newScript = document.createElement("script");
+                newScript.textContent = script.textContent; // or newScript.src = script.src;
+                document.body.appendChild(newScript); // Append the script to the document body
+              });
+            })
+            .catch((error) => {
+              console.error("Error loading file:", error);
+            });
+        }
+      });
 </script>
   </body>
+  <div data-file-include="footer" id="footer"></div>
 </html>

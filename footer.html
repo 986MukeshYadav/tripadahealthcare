@@ -4,61 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <title>Tripada Healthcare Pvt.Ltd.</title>
+
+    <style>
+      .custom-underline1 {
+        position: relative;
+        display: inline-block; /* Ensures the element only takes the width of its content */
+      }
+
+      .custom-underline1::after {
+        content: "";
+        position: absolute;
+        width: 70%; /* Set the width of the underline */
+        top: 110%; /* Position it directly below the text */
+        left: 50%; /* Align it horizontally */
+        margin-left: -50%; /* Adjust to ensure it's centered */
+        border-bottom: 2px solid rgb(228 228 231); /* The thickness and color of the underline */
+      }
+    </style>
   </head>
   <body>
     <main>
       <footer class="bg-neutral-800 text-gray-200">
         <div class="container mx-auto py-10 px-4 md:px-8 lg:px-20">
-          <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
-            <div class="lg:col-span-3 col-span-12">
-              <p class="text-lg underline font-oxygen">About</p>
-              <p class="mt-6 font-oxygen  text-[15px]">
-                Tripada Healthcare a well-known pharmaceutical Company
-                introduced by group of committed, dedicated and experienced
-                professional with a better healthcare and consistently adhering
-                to supreme grade quality standard.
+          <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+            <!-- About Section -->
+            <div class="col-span-1">
+              <p class="text-lg font-oxygen custom-underline1">About</p>
+              <p class="mt-6 font-oxygen text-[15px]">
+                Tripada Healthcare a well-known pharmaceutical Company introduced by
+                group of committed, dedicated and experienced professionals with better
+                healthcare and consistently adhering to supreme grade quality standard.
               </p>
             </div>
 
-            <div class="lg:col-span-2 md:col-span-4 col-span-12">
-              <p
-                class="tracking-wide text-gray-200 text-lg underline font-oxygen font-normal"
-              >
+            <!-- Contact Section -->
+            <div class="col-span-1">
+              <p class="tracking-wide text-gray-200 text-lg custom-underline1 font-oxygen">
                 Contact
               </p>
               <ul class="list-none mt-6 space-y-2 cursor-pointer">
                 <li>
                   <a
-                    class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
+                    class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out text-nowrap"
                   >
-                    <i class="fas fa-phone-alt mr-2 text-[15px]"></i
-                    >Tel:11-26851123
+                    <i class="fas fa-phone-alt mr-2 text-[15px]"></i>Tel:11-26851123
                   </a>
                 </li>
                 <li>
                   <a
-                    class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
+                    class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out text-nowrap"
                   >
-                    <i class="fas fa-phone-alt mr-2 text-[15px]"></i> Tel:
-                    079-26857211
+                    <i class="fas fa-phone-alt mr-2 text-[15px]"></i> Tel: 079-26857211
                   </a>
                 </li>
                 <li>
                   <a
-                    class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out"
+                    class="flex items-center hover:text-blue-500 transition-all duration-500 ease-in-out text-nowrap"
                   >
-                    <i class="fas fa-mobile-alt mr-2 text-[15px]"></i> Phone:
-                    8238522211
+                    <i class="fas fa-mobile-alt mr-2 text-[15px]"></i> Phone: 8238522211
                   </a>
                 </li>
                 <li>
@@ -80,64 +86,41 @@
               </ul>
             </div>
 
-            <div class="lg:col-span-3 md:col-span-4 col-span-12 ">
-              <!-- Follow Us Section -->
-              <p class="tracking-wide text-gray-200 text-lg underline">
-                Follow Us
-              </p>
+            <!-- Follow Us Section -->
+            <div class="col-span-1">
+              <p class="tracking-wide text-gray-200 text-lg custom-underline1">Follow Us</p>
               <div class="flex space-x-1 mt-6">
-                <a
-                  href="https://facebook.com"
-                  class="text-gray-200 hover:text-blue-500"
-                >
+                <a href="https://facebook.com" class="text-gray-200 hover:text-blue-500">
                   <i class="fab fa-facebook-square text-2xl"></i>
                 </a>
-                <a
-                  href="https://instagram.com"
-                  class="text-gray-200 hover:text-blue-500"
-                >
+                <a href="https://instagram.com" class="text-gray-200 hover:text-blue-500">
                   <i class="fab fa-instagram text-2xl"></i>
                 </a>
-                <a
-                  href="https://twitter.com"
-                  class="text-gray-200 hover:text-blue-500"
-                >
+                <a href="https://twitter.com" class="text-gray-200 hover:text-blue-500">
                   <i class="fab fa-twitter-square text-2xl"></i>
                 </a>
-                <a
-                  href="https://google.com"
-                  class="text-gray-200 hover:text-blue-500"
-                >
+                <a href="https://google.com" class="text-gray-200 hover:text-blue-500">
                   <i class="fab fa-google text-2xl"></i>
                 </a>
               </div>
 
-              <!-- Working Hours Section -->
-              <p class="tracking-wide text-gray-200 text-lg mt-4 underline">
-                Hours
-              </p>
+              <p class="tracking-wide text-gray-200 text-lg mt-4 custom-underline1">Hours</p>
               <div class="flex items-center mt-2 left-2">
                 <i class="fas fa-clock text-gray-200 mr-2"></i>
-                <span class="text-gray-200 text-[15px] "
-                  >Mon - Sat: 10 AM - 7 PM</span
-                >
+                <span class="text-gray-200 text-[15px]">Mon - Sat: 10 AM - 7 PM</span>
               </div>
             </div>
 
-            <div class="lg:col-span-3 md:col-span-4 col-span-12">
-              <p class="tracking-wide text-gray-200 text-lg underline">
-                Address
-              </p>
+            <!-- Address Section -->
+            <div class="col-span-1">
+              <p class="tracking-wide text-gray-200 text-lg custom-underline1">Address</p>
               <div class="flex items-start mt-4">
-                <!-- Location Icon -->
                 <i class="fas fa-map-marker-alt text-gray-200 mr-3 mt-2"></i>
-                <!-- Address Text -->
                 <p class="text-[15px]">
-                  Tripada Healthcare Pvt. Ltd.,
-                  <br class="text-[15px]" />
-                  3 Yogi Complex, Nr Doordarshan <br class="text-[15px]" />
-                  Kendra, Thaltej, <br class="text-[15px]" />
-                  Ahmedabad, <br class="text-[15px]" />
+                  Tripada Healthcare Pvt. Ltd.,<br />
+                  3 Yogi Complex, Nr Doordarshan<br />
+                  Kendra, Thaltej, <br />
+                  Ahmedabad, <br />
                   India 380054.
                 </p>
               </div>
@@ -150,30 +133,27 @@
             <p class="mb-0">© Tripada Pvt. Ltd.</p>
           </div>
         </div>
-        <!-- Go to Top Button -->
-    <div
-    id="go-top"
-    class="fixed bottom-10 right-8 w-12 h-12 bg-sky-500 text-white  transition-all duration-300 cursor-pointer hidden"
-  >
-    <a href="index.html" class="flex items-center justify-center w-full h-full">
-      <i class="fas fa-angle-up text-sm"></i>
-    </a>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 
-  <script>
-    const goTopButton = document.getElementById("go-top");
-  
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        goTopButton.classList.remove("hidden");
-        goTopButton.classList.add("flex");
-      } else {
-        goTopButton.classList.add("hidden");
-        goTopButton.classList.remove("flex");
-      }
-    });
-  </script>
+        <!-- Go to Top Button -->
+        <div id="go-top" class="fixed bottom-10 right-8 w-12 h-12 bg-sky-500 text-white transition-all duration-300 cursor-pointer hidden">
+          <a href="index.html" class="flex items-center justify-center w-full h-full">
+            <i class="fas fa-angle-up text-sm"></i>
+          </a>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+        <script>
+          const goTopButton = document.getElementById("go-top");
+
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+              goTopButton.classList.remove("hidden");
+              goTopButton.classList.add("flex");
+            } else {
+              goTopButton.classList.add("hidden");
+              goTopButton.classList.remove("flex");
+            }
+          });
+        </script>
       </footer>
     </main>
   </body>
