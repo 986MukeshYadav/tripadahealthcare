@@ -1,144 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap"
-      rel="stylesheet"
-    />
-    <title>Tripada Healthcare Pvt.Ltd.</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <title>Career | Tripada Healthcare Pvt.Ltd.</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img//favicon.svg" />
+    <link rel="shortcut icon" href="img//favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img//apple-touch-icon.png" />
+    <link rel="manifest" href="img//site.webmanifest" />
+</head>
+<body class="flex items-center justify-center min-h-screen bg-white mt-28 font-oxygen">
+    <div  data-file-include="home" id="home"></div>
 
-    <style>
-      /* Fix the header */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 10; /* Keeps it above the banner */
-      }
+    <div class="flex-2 p-4 mb-16">
+        <h2 class="text-2xl text-neutral-700 mb-4">Career</h2>
+        <p class="font-roboto text-sm text-stone-400">We would love to hear from you! Please fill out this form and we will get in touch with you shortly.</p>
+        <div class="grid grid-cols-1 gap-4">
+            <!-- Name Section -->
+            <p class="text-base font-semibold text-zinc-500 mt-4">Name*</p>
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                <div class="w-full max-w-sm">
+                    <input type="text" id="first-name" name="first-name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <p class="text-sm text-zinc-500 mt-2">First</p>
+                    <span class="text-sm text-red-500 mt-1 hidden" id="firstNameError">Please fill in the required field.</span>
+                </div>
 
-      /* Add padding to the body to prevent overlap with fixed header */
-      body {
-        padding-top: 80px; /* Adjust based on header height */
-      }
-    </style>
-  </head>
-  <body class="bg-white">
-    <nav
-      class="p-5 bg-white shadow lg:flex lg:items-center lg:justify-between xl:px-28 border-b-2 border-blue-500 "
-    >
-      <div class="cursor-pointer flex justify-between items-center z-30">
-        <img src="img/logo.png" alt="logo" />
-        <span
-          class="text-4xl cursor-pointer mx-2 lg:hidden block bg-blue-500 text-white"
-        >
-          <ion-icon name="menu" onclick="toggleMenu(this)"></ion-icon>
-        </span>
-      </div>
+                <div class="w-full max-w-sm">
+                    <input type="text" id="last-name" name="last-name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <p class="text-sm text-zinc-500 mt-2">Last</p>
+                    <span class="text-sm text-red-500 mt-1 hidden" id="lastNameError">Please fill in the required field.</span>
+                </div>
+            </div>
 
-      <ul
-        id="menu"
-        class="lg:flex sm:text-center lg:items-center max-sm:text-center  z-20 lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 font-oxygen text-sm"
-      >
-        <li class="mx-4 my-2 lg:my-0 ">
-          <a
-            href="index.html"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Home</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="index.html#about"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >About Us</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="product.html"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Our Products</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="index.html#gallery"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Gallery</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="index.html#ourcompany"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Our Company</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="index.html#vision"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Vision & Mission</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="career.html"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Career</a
-          >
-        </li>
-        <li class="mx-4 my-2 lg:my-0">
-          <a
-            href="index.html#contact"
-            class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
-            >Contact Us</a
-          >
-        </li>
-      </ul>
-    </nav>
+            <!-- Date of Birth Section -->
+            <p class="text-base font-semibold text-zinc-500 mt-2">Date of Birth*</p>
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                <div class="w-full max-w-sm">
+                    <input type="text" id="dob" name="dob" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <span class="text-sm text-red-500 mt-1 hidden" id="dobError">Please fill in the required field.</span>
+                </div>
+            </div>
+
+            <!-- Contact Details Section -->
+            <p class="text-xl font-semibold text-zinc-500 mt-2 border-b-2 border-stone-300">Contact Details</p>
+            <p class="text-base font-semibold text-zinc-500">Email*</p>
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                <div class="w-full max-w-sm">
+                    <input type="text" id="email" name="email" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <p class="text-sm text-zinc-500 mt-2">Enter Email</p>
+                    <span class="text-sm text-red-500 mt-1 hidden" id="emailError">Please fill in the required field.</span>
+                </div>
+                <div class="w-full max-w-sm">
+                    <input type="text" id="confirm-email" name="confirm-email" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <p class="text-sm text-zinc-500 mt-2">Confirm Email</p>
+                    <span class="text-sm text-red-500 mt-1 hidden" id="confirmEmailError">Please fill in the required field.</span>
+                </div>
+            </div>
+
+            <!-- Address Section -->
+            <p class="text-base font-semibold text-zinc-500 mt-4">Address</p>
+            <div class="grid grid-cols-1 gap-4">
+                <div>
+                    <input type="text" id="street" name="street" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <p class="text-sm text-zinc-500 mt-2">Street Address</p>
+                    <span class="text-sm text-red-500 mt-1 hidden" id="streetError">Please fill in the required field.</span>
+                    
+                    <input type="text" id="address-line-2" name="address-line-2" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black mt-2" placeholder="">
+                    <p class="text-sm text-zinc-500 mt-2">Address Line 2</p>
+                    <span class="text-sm text-red-500 mt-1 hidden" id="addressLine2Error">Please fill in the required field.</span>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div class="w-full max-w-sm">
+                        <input type="text" id="city" name="city" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <p class="text-sm text-zinc-500 mt-2">City</p>
+                        <span class="text-sm text-red-500 mt-1 hidden" id="cityError">Please fill in the required field.</span>
+                    </div>
+                    
+                    <div class="w-full max-w-sm">
+                        <input type="text" id="state" name="state" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <p class="text-sm text-zinc-500 mt-2">State / Province / Region</p>
+                        <span class="text-sm text-red-500 mt-1 hidden" id="stateError">Please fill in the required field.</span>
+                    </div>
+                    <div class="w-full max-w-sm">
+                        <input type="text" id="zip" name="zip" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <p class="text-sm text-zinc-500 mt-2">ZIP / Postal Code</p>
+                        <span class="text-sm text-red-500 mt-1 hidden" id="zipError">Please fill in the required field.</span>
+                    </div>
+                    
+                    <div class="w-full max-w-sm">
+                        <input type="text" id="country" name="country" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <p class="text-sm text-zinc-500 mt-2">Country</p>
+                        <span class="text-sm text-red-500 mt-1 hidden" id="countryError">Please fill in the required field.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Details Section -->
+            <p class="text-xl font-semibold text-zinc-500 mt-2 border-b-2 border-stone-300">Professional Details</p>
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                <div class="w-full max-w-sm">
+                    <p class="text-base font-bold text-zinc-500 my-4">Qualification*</p>
+                    <input type="text" id="qualification" name="qualification" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <span class="text-sm text-red-500 mt-1 hidden" id="qualificationError">Please fill in the required field.</span>
+                
+                    <p class="text-base font-bold text-zinc-500 my-4">Work Experience*</p>
+                    <input type="text" id="work-experience" name="work-experience" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <span class="text-sm text-red-500 mt-1 hidden" id="workExperienceError">Please fill in the required field.</span>
+                
+                    <p class="text-base font-bold text-zinc-500 my-4">Present Company Name</p>
+                    <input type="text" id="company-name" name="company-name" class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <span class="text-sm text-red-500 mt-1 hidden" id="presentcompany">Please fill in the required field.</span>
+                    <p class="text-base font-bold text-zinc-500 mt-4">Upload Your CV*</p>
+                    <input type="file" id="cv-upload" name="cv-upload" required class="w-full p-3 h-10">
+                    <span class="text-sm text-red-500 mt-1 hidden" id="cvError">Please upload your CV.</span>
+                </div>
+            </div>
+
+            <!-- Captcha (Optional) -->
+
+            <!-- Submit Button -->
+           <!-- Submit Button -->
+<div class="flex justify-start mt-6">
+  <button type="button" id="submitButton" class="w-auto max-w-sm p-3 h-10 bg-sky-500 text-white py-3 hover:bg-neutral-800 focus:ring-2 mt-4">
+      SUBMIT
+  </button>
+  <span class="hidden text-red-500 text-sm mt-1" id="streetError">Please fill in the required field.</span>
+</div>
+
+<!-- Validation Error Message -->
+<div id="validationErrors" class="w-auto wpcf7-response-output wpcf7-display-none wpcf7-validation-errors hidden text-red-500 text-sm mt-4 border-2 px-4 py-2" role="alert">
+  Validation errors occurred. Please confirm the fields and submit it again.
+</div>
+
+        </div>
+    </div>
 
     <script>
-      function toggleMenu(icon) {
-        const menu = document.getElementById("menu");
-        if (menu.classList.contains("top-[120px]")) {
-          menu.classList.remove("top-[120px]", "opacity-100","h-[250px]", "bg-sky-500");
-          menu.classList.add("top-[-400px]", "opacity-0");
-          icon.name = "menu";
-        } else {
-          menu.classList.remove("top-[-400px]", "opacity-0");
-          menu.classList.add("top-[120px]", "opacity-100","h-[250px]", "bg-sky-500");
-          icon.name = "";
+        // Function to validate required fields
+        function validateField(id, errorId) {
+            const field = document.getElementById(id);
+            const error = document.getElementById(errorId);
+            if (!field.value.trim()) {
+                error.classList.remove('hidden');
+                return false;
+            } else {
+                error.classList.add('hidden');
+                return true;
+            }
         }
-      }
 
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
+        // Event listener for the submit button
+        const submitButton = document.getElementById('submitButton');
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission for validation
 
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
+            let isValid = true;
 
-          // const menu = document.getElementById("menu");
-          // menu.classList.remove("top-[120px]", "opacity-100", "bg-sky-500");
-          // menu.classList.add("top-[-400px]", "opacity-0");
-          // const icon = document.querySelector(".text-4xl");
-          // icon.name = "menu";
+            // Validate each field
+            isValid &= validateField('first-name', 'firstNameError');
+            isValid &= validateField('last-name', 'lastNameError');
+            isValid &= validateField('dob', 'dobError');
+            isValid &= validateField('email', 'emailError');
+            isValid &= validateField('confirm-email', 'confirmEmailError');
+            isValid &= validateField('street', 'streetError');
+            isValid &= validateField('address-line-2', 'addressLine2Error');
+            isValid &= validateField('city', 'cityError');
+            isValid &= validateField('state', 'stateError');
+            isValid &= validateField('zip', 'zipError');
+            isValid &= validateField('country', 'countryError');
+            isValid &= validateField('qualification', 'qualificationError');
+            isValid &= validateField('work-experience', 'workExperienceError');
+            isValid &= validateField('company-name', 'presentcompany');
+            isValid &= validateField('cv-upload', 'cvError');
+
+            // If all fields are valid, you can submit the form or perform further actions
+            if (isValid) {
+                console.log("Form is valid!");
+                // form.submit();  // Uncomment this line if you want to submit the form
+            } else {
+                console.log("Please fill in all required fields.");
+            }
         });
-      });
     </script>
-  </body>
+</body>
 </html>

@@ -33,12 +33,12 @@
     <link rel="manifest" href="img//site.webmanifest" />
   </head>
   <body
-    class="flex flex-col items-center justify-center min-h-screen bg-white mt-28 font-oxygen"
+    class="flex items-center justify-center min-h-screen bg-white mt-28 font-oxygen"
   >
     <div data-file-include="home" id="home"></div>
-    <div class="flex max-w-5xl bg-white overflow-hidden space-x-8">
+    <div class="flex flex-col-reverse md:flex-row max-w-5xl bg-white overflow-hidden space-x-8">
       <!-- Product Categories -->
-      <div class="flex-1 max-[1000px]:hidden">
+      <div class="flex-1  px-4 lg:px-4 mb-4">
         <h2 class="text-xl text-neutral-700 mb-4 border-b-2 border-blue-400">
           PRODUCTS
         </h2>
@@ -47,7 +47,7 @@
             <a
               href="#alcohol"
               onclick="showImages('alcohol')"
-              class="w-full block text-left text-base text-white bg-sky-500 py-2 px-4"
+              class="w-full block text-left text-base text-white bg-sky-500 py-2 px-4 text-nowrap"
               >ALCOHOL ABUSE DETERENT</a
             >
           </li>
@@ -913,6 +913,8 @@
         }
       });
     </script>
-    <div data-file-include="footer" id="footer" class="w-full"></div>
+    <!-- <div data-file-include="footer" id="footer" class="w-full"></div> -->
   </body>
 </html>
+
+

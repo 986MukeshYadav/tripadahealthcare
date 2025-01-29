@@ -16,12 +16,12 @@
 </head>
 <body class="flex items-center justify-center min-h-screen bg-white mt-28 font-oxygen">
     <div  data-file-include="home" id="home"></div>
-    <div class="flex max-w-5xl bg-white  overflow-hidden space-x-8">
+    <div class="flex flex-col-reverse md:flex-row max-w-5xl bg-white overflow-hidden space-x-8">
         <!-- Product Categories -->
-        <div class="flex-1 max-[1000px]:hidden">
+        <div class="flex-1 px-4 lg:px-4 mb-4">
             <h2 class="text-xl  text-neutral-700 mb-4 border-b-2 border-blue-400">PRODUCTS</h2>
             <ul class="space-y-2">
-                <li><a href="#alcohol" onclick="showImages('alcohol')" class="w-full block text-left text-base text-white bg-sky-500  py-2 px-4 ">ALCOHOL ABUSE DETERENT</a></li>
+                <li><a href="#alcohol" onclick="showImages('alcohol')" class="w-full block text-left text-base text-white bg-sky-500  py-2 px-4 text-nowrap">ALCOHOL ABUSE DETERENT</a></li>
                 <li><a href="#morphin" onclick="showImages('morphin')" class="w-full block text-left text-base text-white bg-sky-500  py-2 px-4 ">MORPHIN ADDICTION</a></li>
                 <li><a href="#metabolism" onclick="showImages('metabolism')" class="w-full block text-left text-base text-white bg-sky-500  py-2 px-4 ">METABOLISM – POISONING & DRUG DEPENDANCE</a></li>
                 <li><a href="#erectile" onclick="showImages('erectile')" class="w-full block text-left text-base text-white bg-sky-500  py-2 px-4 ">DRUGS FOR ERECTILE DYSFUNCTION</a></li>
@@ -60,15 +60,15 @@
             <p class="font-roboto text-sm text-stone-400">We would love to hear from you! Please fill out this form and we will get in touch with you shortly.</p>
             <div class="grid grid-cols-1 gap-4">
                 <p class="text-base font-semibold text-zinc-500 mt-4">Name*</p>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid  lg:grid-cols-2  grid-cols-1 gap-4 ">
                     <!-- First Name Input and Label -->
-                    <div>
-                        <input type="text" id="name" name="name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                    <div class="w-full max-w-sm">
+                        <input type="text" id="name" name="name" required class="w-full  p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                         <p class="text-sm text-zinc-500 mt-2">First</p>
                     </div>
                     
                     <!-- Last Name Input and Label -->
-                    <div>
+                    <div class="w-full max-w-sm">
                         <input type="text" id="name" name="name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                         <p class="text-sm text-zinc-500 mt-2">Last</p>
                     </div>
@@ -76,21 +76,22 @@
         
                 <!-- Date of Birth Input and Label -->
                 <p class="text-base font-semibold text-zinc-500 mt-2">Date of Birth*</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
+              
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="w-full max-w-sm">
                         <input type="text" id="dob" name="dob" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                     </div>
                 </div>
         
                 <p class="text-xl font-semibold text-zinc-500 mt-2 border-b-2 border-stone-300">Contact Details</p>
                 <p class="text-base font-semibold text-zinc-500">Email*</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
+                <div class="grid grid-cols-1 gap-4  lg:grid-cols-2">
+                    <div class="w-full max-w-sm">
                         <input type="text" id="email" name="email" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                         <p class="text-sm text-zinc-500 mt-2">Enter Email</p>
                     </div>
                     
-                    <div>
+                    <div class="w-full max-w-sm">
                         <input type="text" id="confirm-email" name="confirm-email" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                         <p class="text-sm text-zinc-500 mt-2">Confirm Email</p>
                     </div>
@@ -105,22 +106,22 @@
                         <p class="text-sm text-zinc-500 mt-2">Address Line 2</p>
                     </div>
                     
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
+                    <div class="grid grid-cols-1  lg:grid-cols-2 gap-4">
+                        <div class="w-full max-w-sm">
                             <input type="text" id="city" name="city" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                             <p class="text-sm text-zinc-500 mt-2">City</p>
                         </div>
                         
-                        <div>
+                        <div class="w-full max-w-sm">
                             <input type="text" id="state" name="state" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                             <p class="text-sm text-zinc-500 mt-2">State / Province / Region</p>
                         </div>
-                        <div>
+                        <div class="w-full max-w-sm">
                             <input type="text" id="zip" name="zip" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                             <p class="text-sm text-zinc-500 mt-2">ZIP / Postal Code</p>
                         </div>
                         
-                        <div>
+                        <div class="w-full max-w-sm">
                             <input type="text" id="country" name="country" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                             <p class="text-sm text-zinc-500 mt-2">Country</p>
                         </div>
@@ -128,8 +129,8 @@
                 </div>
         
                 <p class="text-xl font-semibold text-zinc-500 mt-2 border-b-2 border-stone-300">Professional Details</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="w-full max-w-sm">
                         <p class="text-base font-bold text-zinc-500 my-4">Qualification*</p>
                         <input type="text" id="qualification" name="qualification" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                 
@@ -141,17 +142,19 @@
                 
                         <p class="text-base font-bold text-zinc-500 mt-4">Upload Your CV*</p>
                         <input type="file" id="cv-upload" name="cv-upload" required class="w-full p-3 h-10">
-                
+
+                        <!-- Captcha Section -->
                         <p class="text-base font-bold text-zinc-500 my-4">Captcha</p>
-                        <img src="img/captach.png" alt="Captcha" class="w-20 h-10 object-cover my-3">
-                        <input type="text" id="captcha" name="captcha" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
-                    </div>
-                </div>
-                
-                <!-- Submit Button -->
-                <button type="submit" class="w-1/6 bg-sky-500 text-white  py-3  hover:bg-neutral-800 focus:ring-2  mt-4">
-                    SUBMIT
-                </button>
+                        <p id="captchaText" class="text-base tracking-[8px] font-bold text-black my-3">ZSPA</p>
+                        <input type="text" id="captcha" name="captcha" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="Enter Captcha">
+
+                        <!-- Submit Button -->
+                        <div class="flex justify-start mt-6">
+                            <button type="button" id="submitButton" class="w-auto max-w-sm p-3 h-10 bg-sky-500 text-white py-3 hover:bg-neutral-800 focus:ring-2 mt-4">
+                                SUBMIT
+                            </button>
+                        </div>
+
             </div>
         </div>
         
@@ -184,6 +187,33 @@
                     });
             }
         });
+
+
+       
+    // Function to generate a random CAPTCHA string of specified length
+    function generateCaptcha(length) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let captcha = '';
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            captcha += characters[randomIndex];
+        }
+        return captcha;
+    }
+
+    // Function to change the captcha text
+    function changeCaptcha() {
+        const captchaTextElement = document.getElementById('captchaText');
+        const newCaptcha = generateCaptcha(4); // 4 characters long CAPTCHA
+        captchaTextElement.textContent = newCaptcha; // Update the displayed CAPTCHA
+    }
+
+    // Event listener for the submit button
+    const submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', function() {
+        changeCaptcha(); // Change the CAPTCHA when the button is clicked
+    });
+
     </script>
        
    
