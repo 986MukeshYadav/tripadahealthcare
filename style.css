@@ -13,3 +13,21 @@
     border-bottom: 2px solid; /* The thickness of the underline */
     border-color:rgb(64 64 64); /* Inherit the text color */
   }
+
+  .oxygen-light {
+    font-family: "Oxygen", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .oxygen-regular {
+    font-family: "Oxygen", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .oxygen-bold {
+    font-family: "Oxygen", serif;
+    font-weight: 700;
+    font-style: normal;
+  }

@@ -124,7 +124,7 @@
 
             <!-- Captcha (Optional) -->
 
-            <!-- Submit Button -->
+           
            <!-- Submit Button -->
 <div class="flex justify-start mt-6">
   <button type="button" id="submitButton" class="w-auto max-w-sm p-3 h-10 bg-sky-500 text-white py-3 hover:bg-neutral-800 focus:ring-2 mt-4">
@@ -142,51 +142,56 @@
     </div>
 
     <script>
-        // Function to validate required fields
+        // Function to validate required fields and show error message if invalid
         function validateField(id, errorId) {
             const field = document.getElementById(id);
             const error = document.getElementById(errorId);
+            
+            // Check if the field is empty
             if (!field.value.trim()) {
-                error.classList.remove('hidden');
+                error.classList.remove('hidden'); // Show error message if field is empty
                 return false;
             } else {
-                error.classList.add('hidden');
+                error.classList.add('hidden'); // Hide error message if field is filled
                 return true;
             }
         }
-
+    
         // Event listener for the submit button
         const submitButton = document.getElementById('submitButton');
         submitButton.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent form submission for validation
-
+    
             let isValid = true;
-
-            // Validate each field
-            isValid &= validateField('first-name', 'firstNameError');
-            isValid &= validateField('last-name', 'lastNameError');
-            isValid &= validateField('dob', 'dobError');
-            isValid &= validateField('email', 'emailError');
-            isValid &= validateField('confirm-email', 'confirmEmailError');
-            isValid &= validateField('street', 'streetError');
-            isValid &= validateField('address-line-2', 'addressLine2Error');
-            isValid &= validateField('city', 'cityError');
-            isValid &= validateField('state', 'stateError');
-            isValid &= validateField('zip', 'zipError');
-            isValid &= validateField('country', 'countryError');
-            isValid &= validateField('qualification', 'qualificationError');
-            isValid &= validateField('work-experience', 'workExperienceError');
-            isValid &= validateField('company-name', 'presentcompany');
-            isValid &= validateField('cv-upload', 'cvError');
-
-            // If all fields are valid, you can submit the form or perform further actions
-            if (isValid) {
+    
+            // Validate each field using the validateField function
+           isValid &= validateField('first-name', 'firstNameError');
+           isValid &= validateField('last-name', 'lastNameError');
+           isValid &= validateField('dob', 'dobError');
+           isValid &= validateField('email', 'emailError');
+           isValid &= validateField('confirm-email', 'confirmEmailError');
+           isValid &= validateField('street', 'streetError');
+           isValid &= validateField('address-line-2', 'addressLine2Error');
+           isValid &= validateField('city', 'cityError');
+           isValid &= validateField('state', 'stateError');
+           isValid &= validateField('zip', 'zipError');
+           isValid &= validateField('country', 'countryError');
+           isValid &= validateField('qualification', 'qualificationError');
+           isValid &= validateField('work-experience', 'workExperienceError');
+           isValid &= validateField('company-name', 'presentcompany');
+           isValid &= validateField('cv-upload', 'cvError');
+    
+            // If validation fails, show the global error message
+            if (!isValid) {
+                document.getElementById('validationErrors').classList.remove('hidden');
+            } else {
+                document.getElementById('validationErrors').classList.add('hidden');
                 console.log("Form is valid!");
                 // form.submit();  // Uncomment this line if you want to submit the form
-            } else {
-                console.log("Please fill in all required fields.");
             }
         });
     </script>
+    
+    
 </body>
 </html>

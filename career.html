@@ -63,13 +63,15 @@
                 <div class="grid  lg:grid-cols-2  grid-cols-1 gap-4 ">
                     <!-- First Name Input and Label -->
                     <div class="w-full max-w-sm">
-                        <input type="text" id="name" name="name" required class="w-full  p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <input type="text" id="first-name" name="first-name" required class="w-full  p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <span class="text-sm text-red-500 mt-1 hidden" id="firstNameError">Please fill in the required field.</span>
                         <p class="text-sm text-zinc-500 mt-2">First</p>
                     </div>
                     
                     <!-- Last Name Input and Label -->
                     <div class="w-full max-w-sm">
-                        <input type="text" id="name" name="name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <input type="text"  id="last-name" name="last-name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <span class="text-sm text-red-500 mt-1 hidden" id="lastNameError">Please fill in the required field.</span>
                         <p class="text-sm text-zinc-500 mt-2">Last</p>
                     </div>
                 </div>
@@ -89,11 +91,12 @@
                     <div class="w-full max-w-sm">
                         <input type="text" id="email" name="email" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                         <p class="text-sm text-zinc-500 mt-2">Enter Email</p>
+                        <span class="text-sm text-red-500 mt-1 hidden" id="emailError">Please fill in the required field.</span>
                     </div>
-                    
                     <div class="w-full max-w-sm">
                         <input type="text" id="confirm-email" name="confirm-email" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
                         <p class="text-sm text-zinc-500 mt-2">Confirm Email</p>
+                        <span class="text-sm text-red-500 mt-1 hidden" id="confirmEmailError">Please fill in the required field.</span>
                     </div>
                 </div>
         
@@ -128,31 +131,42 @@
                     </div>
                 </div>
         
+                  <!-- Professional Details Section -->
                 <p class="text-xl font-semibold text-zinc-500 mt-2 border-b-2 border-stone-300">Professional Details</p>
                 <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
                     <div class="w-full max-w-sm">
                         <p class="text-base font-bold text-zinc-500 my-4">Qualification*</p>
                         <input type="text" id="qualification" name="qualification" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <span class="text-sm text-red-500 mt-1 hidden" id="qualificationError">Please fill in the required field.</span>
                 
                         <p class="text-base font-bold text-zinc-500 my-4">Work Experience*</p>
                         <input type="text" id="work-experience" name="work-experience" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
+                        <span class="text-sm text-red-500 mt-1 hidden" id="workExperienceError">Please fill in the required field.</span>
                 
                         <p class="text-base font-bold text-zinc-500 my-4">Present Company Name</p>
                         <input type="text" id="company-name" name="company-name" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="">
-                
+                        <span class="text-sm text-red-500 mt-1 hidden" id="presentcompany">Please fill in the required field.</span>
                         <p class="text-base font-bold text-zinc-500 mt-4">Upload Your CV*</p>
                         <input type="file" id="cv-upload" name="cv-upload" required class="w-full p-3 h-10">
+                        <span class="text-sm text-red-500 mt-1 hidden" id="cvError">Please upload your CV.</span>
 
                         <!-- Captcha Section -->
                         <p class="text-base font-bold text-zinc-500 my-4">Captcha</p>
                         <p id="captchaText" class="text-base tracking-[8px] font-bold text-black my-3">ZSPA</p>
                         <input type="text" id="captcha" name="captcha" required class="w-full p-3 h-10 border-2 border-gray-300 focus:ring-black" placeholder="Enter Captcha">
+                    </div>
+                </div>
 
                         <!-- Submit Button -->
                         <div class="flex justify-start mt-6">
                             <button type="button" id="submitButton" class="w-auto max-w-sm p-3 h-10 bg-sky-500 text-white py-3 hover:bg-neutral-800 focus:ring-2 mt-4">
                                 SUBMIT
                             </button>
+                        </div>
+
+                        <!-- Validation Error Message -->
+                        <div id="validationErrors" class="w-auto wpcf7-response-output wpcf7-display-none wpcf7-validation-errors hidden text-red-500 text-sm mt-4 border-2 px-4 py-2" role="alert">
+                            Validation errors occurred. Please confirm the fields and submit it again.
                         </div>
 
             </div>
@@ -208,14 +222,53 @@
         captchaTextElement.textContent = newCaptcha; // Update the displayed CAPTCHA
     }
 
-    // Event listener for the submit button
-    const submitButton = document.getElementById('submitButton');
-    submitButton.addEventListener('click', function() {
-        changeCaptcha(); // Change the CAPTCHA when the button is clicked
-    });
-
+    // // Event listener for the submit button
+    // const submitButton = document.getElementById('submitButton');
+    // submitButton.addEventListener('click', function() {
+    //     changeCaptcha(); // Change the CAPTCHA when the button is clicked
+    // });
+   // Function to validate required fields and show error message if invalid
+   function validateField(id, errorId) {
+            const field = document.getElementById(id);
+            const error = document.getElementById(errorId);
+            
+            // Check if the field is empty
+            if (!field.value.trim()) {
+                error.classList.remove('hidden'); // Show error message if field is empty
+                return false;
+            } else {
+                error.classList.add('hidden'); // Hide error message if field is filled
+                return true;
+            }
+        }
+    
+        // Event listener for the submit button
+        const submitButton = document.getElementById('submitButton');
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission for validation
+            changeCaptcha();
+            let isValid = true;
+    
+            // Validate each field using the validateField function
+           isValid &= validateField('first-name', 'firstNameError');
+           isValid &= validateField('last-name', 'lastNameError');
+           isValid &= validateField('email', 'emailError');
+           isValid &= validateField('confirm-email', 'confirmEmailError');
+           isValid &= validateField('qualification', 'qualificationError');
+           isValid &= validateField('work-experience', 'workExperienceError');
+           isValid &= validateField('company-name', 'presentcompany');
+           isValid &= validateField('cv-upload', 'cvError');
+    
+            // If validation fails, show the global error message
+            if (!isValid) {
+                document.getElementById('validationErrors').classList.remove('hidden');
+            } else {
+                document.getElementById('validationErrors').classList.add('hidden');
+                console.log("Form is valid!");
+                // form.submit();  // Uncomment this line if you want to submit the form
+            }
+        });
     </script>
-       
-   
+    <div  data-file-include="footer" id="footer"></div>
 </body>
 </html>

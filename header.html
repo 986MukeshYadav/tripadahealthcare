@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Tripada Healthcare Pvt.Ltd.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
@@ -20,6 +19,25 @@
     ></script>
 
     <style>
+    .oxygen-light {
+  font-family: "Oxygen", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oxygen-regular {
+  font-family: "Oxygen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oxygen-bold {
+  font-family: "Oxygen", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 
     @keyframes blink {
       0% { opacity: 1; }
@@ -57,8 +75,8 @@
       }
 
       #scroll-down-btn {
-        width: 70px; /* Set fixed button width */
-        height: 70px; /* Set fixed button height */
+        width: 60px; /* Set fixed button width */
+        height: 60px; /* Set fixed button height */
       }
 
       /* Fix the header */
@@ -72,7 +90,7 @@
 
       /* Add padding to the body to prevent overlap with fixed header */
       body {
-        padding-top: 80px; /* Adjust based on header height */
+        padding-top: 105px; /* Adjust based on header height */
       }
 
       /* Ensure the carousel content is not hidden */
@@ -112,15 +130,15 @@
   </head>
   <body class="bg-white font-oxygen">
     <nav
-      class="p-5 bg-white shadow lg:flex lg:items-center lg:justify-between xl:px-28 border-b-[3px] border-blue-500 "
+      class="p-2.5 bg-white shadow lg:flex lg:items-center lg:justify-between xl:px-28 border-b-[3px] border-blue-500 "
     >
-      <div class="cursor-pointer flex justify-between items-center ">
+      <div class="cursor-pointer flex justify-between items-center font-light">
        <a href="index.html"> <img href="index.html" src="img/logo.png" alt="logo" /></a>
 
 
        <!-- toggleMenu Icon -->
         <span
-          class="text-4xl cursor-pointer mx-2 lg:hidden block bg-blue-500 text-white"
+          class="text-4xl cursor-pointer mx-2 lg:hidden block bg-sky-500 text-white"
         >
           <ion-icon name="menu" onclick="toggleMenu(this)"></ion-icon>
         </span>
@@ -129,58 +147,58 @@
       
       <ul
         id="menu"
-        class="sm:text-center max-sm:text-center lg:flex lg:items-center lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 font-oxygen text-sm"
+        class="oxygen-light sm:text-center max-sm:text-center lg:flex lg:items-center lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-3 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500  text-sm"
       >
-        <li class="mx-4 my-8 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="index.html"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >Home</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="#about"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >About Us</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="product.html"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >Our Products</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="galleryPageNav.html"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >Gallery</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="#ourcompany"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >Our Company</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="#vision"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >Vision & Mission</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="career.html"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
             >Career</a
           >
         </li>
-        <li class="mx-4 my-6 lg:my-0">
+        <li class="mx-3 my-1 lg:my-0">
           <a
             href="#contact"
             class="text-black max-lg:text-gray-300 uppercase hover:text-blue-500 max-[1120px]:text-sm"
@@ -227,12 +245,12 @@
 
     <div id="carousel" class="relative w-full h-full overflow-hidden ">
       <h2
-        class="absolute max-sm:w-full max-sm:text-center max-md:w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 text-white font-bold max-[350px]:font-semibold text-4xl lg:text-[40px] text-[30px] lg:tracking-tight  z-10"
+        class="oxygen-bold absolute max-sm:w-full max-sm:text-center max-md:w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-16 text-white  text-[30px] lg:text-[42px]  lg:tracking-tight  z-10"
       >
         TRIPADA HEALTHCARE PVT. LTD.
       </h2>
       <h2
-        class="absolute max-sm:w-full max-sm:text-center max-md:w-full max-sm:mt-4  text-center top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-1/4 text-white text-2xl lg:text-[24px] text-[20px] lg:tracking-tight  z-10"
+        class="oxygen-light absolute max-sm:w-full max-sm:text-center max-md:w-full max-sm:mt-4  text-center top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-1/4 text-white text-2xl lg:text-[24px] text-[20px] lg:tracking-tight  z-10"
       >
         Help To Rise Back To Glorious Health.
       </h2>
@@ -271,12 +289,14 @@
       <!-- Static Arrow Button Below h2 Tag -->
       <button
         id="scroll-down-btn"
-        class="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent border-2 border-neutral-400 p-4 rounded-full shadow-lg flex items-center justify-center"
+        class="absolute  top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent border-2 border-neutral-400 p-4 rounded-full shadow-lg flex items-center justify-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          class="text-gray-500 arrow w-16 h-16"
+          class="text-gray-500 arrow "
+          width="200"
+          height="200"
           stroke-width="0.5"
         >
           <path
@@ -289,12 +309,12 @@
       <!-- Carousel Controls -->
       <button
         id="prev-btn"
-        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-none text-neutral-400 p-4 rounded-full"
+        class="absolute top-1/2 -left-10 transform -translate-y-1/2 bg-none text-neutral-400 p-4 rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
+          width="150"
+          height="150"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -307,14 +327,15 @@
           ></path>
         </svg>
       </button>
+
       <button
         id="next-btn"
-        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-none text-neutral-400 p-4 rounded-full"
+        class="absolute top-1/2 -right-10 transform -translate-y-1/2 bg-none text-neutral-400 p-4 rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
+          width="150"
+          height="150"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

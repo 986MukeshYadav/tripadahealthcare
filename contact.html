@@ -3,53 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Tripada Healthcare Pvt.Ltd.</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+    .oxygen-light {
+  font-family: "Oxygen", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oxygen-regular {
+  font-family: "Oxygen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oxygen-bold {
+  font-family: "Oxygen", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+    </style>
   </head>
-  <body class="bg-white p-8">
-    <div class="flex justify-center mt-10 mb-8">
-      <span class="text-4xl font-oxygen text-zinc-600 relative pb-3 custom-underline">
+  <body class="bg-white p-8 ">
+    <div class="flex justify-center mt-[60px] mb-[40px]">
+      <span class="oxygen-light lg:text-[34px] text-[26px] font-oxygen text-zinc-600 relative pb-3 custom-underline">
         CONTACT US
       </span>
     </div>
     
       <form action="#" method="POST">
-        <div class="mb-4 xl:px-16 px-2 md:px-4">
+        <div class="mb-4 xl:px-24 px-[15px] md:px-10 oxygen-light">
           <input
             type="text"
             id="name"
             name="name"
             required
-            class="w-full p-4 sm:p-3 text-lg sm:text-base border-b-2 border-gray-300 focus:rounded focus:ring-2 focus:ring-black"
+            class="w-full p-4 sm:p-3 text-lg sm:text-base border-b-2 border-neutral-400 focus:rounded focus:ring-2 focus:ring-black"
             placeholder="Name:"
           />
         </div>
 
-        <div class="mb-4 xl:px-16 px-2 md:px-4">
+        <div class="mb-4 xl:px-24 px-[15px] md:px-10 oxygen-light">
           <input
             type="email"
             id="email"
             name="email"
             required
-            class="w-full p-4 sm:p-3 text-lg sm:text-base border-b-2 border-gray-300 focus:rounded focus:ring-2 focus:ring-black"
+            class="w-full p-4 sm:p-3 text-lg sm:text-base border-b-2 border-neutral-400 focus:rounded focus:ring-2 focus:ring-black"
             placeholder="Email:"
           />
         </div>
 
-        <div class="mb-4 xl:px-16 px-2 md:px-4">
+        <div class="mb-4 xl:px-24 px-[15px] md:px-10 oxygen-light">
           <textarea
             id="message"
             name="message"
             rows="4"
             required
-            class="w-full p-4 sm:p-3 text-lg sm:text-base border-b-2 border-gray-300 focus:rounded focus:ring-2 focus:ring-black"
+            class="w-full p-4 sm:p-3 text-lg sm:text-base border-b-2 border-neutral-400 focus:rounded focus:ring-2 focus:ring-black"
             placeholder="Message:"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          class="w-40 py-4 sm:w-36 sm:py-3 bg-sky-500 text-white text-lg sm:text-base font-roboto block mx-auto mb-10"
+          class="oxygen-light w-40  py-4 sm:w-36 sm:py-3 items-center bg-sky-500 text-white text-lg sm:text-base font-roboto block mx-auto mb-24"
         >
           SEND
         </button>

@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .parallax {
@@ -57,16 +58,50 @@
           
         }
 }
+.oxygen-light {
+      font-family: "Oxygen", serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+    
+    .oxygen-regular {
+      font-family: "Oxygen", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+    .oxygen-bold {
+      font-family: "Oxygen", serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+    .roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto",sans-serif ;
+  font-weight: 700;
+  font-style: normal;
+}
     </style>
     <title>Tripada Healthcare Pvt. Ltd.</title>
   </head>
-  <body class="font-roboto">
+  <body>
     <!-- Main Container -->
     <section class="parallax py-12 px-0">
       <div class="mid-content bg-stone-50 mt-16">
         <!-- "Vision & Mission" Title -->
         <div class="flex justify-center mt-8">
-          <span class="text-4xl font-oxygen text-zinc-600 relative pb-3 custom-underline mt-16">
+          <span class="text-[34px] oxygen-light text-zinc-600 relative pb-3 custom-underline mt-16">
             VISION & MISSION
           </span>
         </div>
@@ -78,10 +113,10 @@
           <div class="page-style p-8 bg-opacity-50 backdrop-blur-sm rounded-lg">
             <!-- Vision -->
             <div class="mb-8 ">
-              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4 ">
+              <h2 class="text-xl  text-zinc-700 text-center mb-4 oxygen-bold ">
                 Vision
               </h2>
-              <p class="text-base text-zinc-500 ">
+              <p class="text-base text-zinc-500 roboto-regular">
                 "Our vision is to be a leading pharmaceutical company in India and
                 to become a significant global player by providing high quality,
                 affordable, and innovative solutions in medicine for psychiatric
@@ -91,10 +126,10 @@
 
             <!-- Mission -->
             <div class="mb-8">
-              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
+              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4 oxygen-bold">
                 Mission
               </h2>
-              <p class="text-base text-zinc-500">
+              <p class="text-base text-zinc-500 roboto-regular">
                 "We will discover, develop, and successfully market pharmaceutical
                 products for psychiatric care and shall provide total customer
                 satisfaction and achieve leadership in chosen markets, products,
@@ -105,15 +140,15 @@
 
             <!-- Values -->
             <div class="values-list">
-              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4">
+              <h2 class="text-xl font-bold text-zinc-700 text-center mb-4 oxygen-bold">
                 Values
               </h2>
-              <p class="text-base text-zinc-500 mb-8">
+              <p class="text-base text-zinc-500 mb-8 roboto-regular">
                 A set of core values continue to guide us through the process of
                 transforming the conglomerate into a high-performing and caring
                 organization for our customers, employees, and society.
               </p>
-              <ul class="list-inside space-y-1 text-base text-zinc-500 ">
+              <ul class="list-inside space-y-1 text-base text-zinc-500 roboto-regular">
                 <li>
                   Improving quality of life of our customers, as we believe
                   quality is a way of life.
